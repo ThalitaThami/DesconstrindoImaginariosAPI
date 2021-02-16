@@ -81,6 +81,14 @@ namespace DesconstruindoImaginariosAPI.Controllers
         public async Task<ActionResult<Question>> PostQuestion(Question question)
         {
             _context.Questions.Add(question);
+
+            var module = await _context.Modules.FindAsync(question.Module.ModuleId);
+            if (module != null)
+            {
+                _context.Entry(module).State = EntityState.Modified;
+                _context.Update(module);
+            }            
+
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetQuestion", new { id = question.QuestionId }, question);

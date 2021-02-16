@@ -53,7 +53,7 @@ namespace DesconstruindoImaginariosAPI.Migrations
                         column: x => x.ModuleId,
                         principalTable: "Modules",
                         principalColumn: "ModuleId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -74,7 +74,7 @@ namespace DesconstruindoImaginariosAPI.Migrations
                         column: x => x.QuestionId,
                         principalTable: "Questions",
                         principalColumn: "QuestionId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

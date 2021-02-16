@@ -52,7 +52,7 @@ namespace DesconstruindoImaginariosAPI.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Name")  
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ModuleId");
@@ -108,7 +108,8 @@ namespace DesconstruindoImaginariosAPI.Migrations
                 {
                     b.HasOne("DesconstruindoImaginariosAPI.Models.Question", "Question")
                         .WithMany("AnswersList")
-                        .HasForeignKey("QuestionId");
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Question");
                 });
@@ -117,7 +118,8 @@ namespace DesconstruindoImaginariosAPI.Migrations
                 {
                     b.HasOne("DesconstruindoImaginariosAPI.Models.Module", "Module")
                         .WithMany()
-                        .HasForeignKey("ModuleId");
+                        .HasForeignKey("ModuleId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Module");
                 });

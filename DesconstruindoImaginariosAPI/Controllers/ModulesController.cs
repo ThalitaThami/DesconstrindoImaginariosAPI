@@ -25,7 +25,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Module>>> GetModules()
         {
-            return await _context.Modules.ToListAsync();
+            return await _context.Modules.Include(x => x.Questions).ToListAsync();
         }
 
         // GET: api/Modules/5
@@ -54,24 +54,22 @@ namespace DesconstruindoImaginariosAPI.Controllers
             }
 
             _context.Entry(@module).State = EntityState.Modified;
-
             try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
             {
                 if (!ModuleExists(id))
                 {
-                    return NotFound();
+                    return NotFound();                   
                 }
-                else
-                {
-                    throw;
-                }
+                _context.Update(@module);
+
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
             }
 
-            return NoContent();
+            return Ok();
         }
 
         // POST: api/Modules

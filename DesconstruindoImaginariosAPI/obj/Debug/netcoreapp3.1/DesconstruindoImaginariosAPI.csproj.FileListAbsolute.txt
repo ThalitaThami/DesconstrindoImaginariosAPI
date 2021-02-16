@@ -2,7 +2,6 @@ C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\Des
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\DesconstruindoImaginariosAPI.exe
-C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\obj\Debug\netcoreapp3.1\DesconstruindoImaginariosAPI.csprojAssemblyReference.cache
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\obj\Debug\netcoreapp3.1\staticwebassets\DesconstruindoImaginariosAPI.StaticWebAssets.Manifest.cache
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\obj\Debug\netcoreapp3.1\staticwebassets\DesconstruindoImaginariosAPI.StaticWebAssets.xml
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\obj\Debug\netcoreapp3.1\DesconstruindoImaginariosAPI.AssemblyInfoInputs.cache
@@ -157,3 +156,7 @@ C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\Des
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\obj\Debug\netcoreapp3.1\DesconstruindoImaginariosAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\obj\Debug\netcoreapp3.1\DesconstruindoImaginariosAPI.csprojAssemblyReference.cache
