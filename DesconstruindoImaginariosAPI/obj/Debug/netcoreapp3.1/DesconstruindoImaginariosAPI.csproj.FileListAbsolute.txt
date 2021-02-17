@@ -159,4 +159,3 @@ C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\Des
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\Users\Thalita Oliveira\Desktop\Thalita\Projetos\DesconstruindoImaginarios\DesconstruindoImaginariosAPI\DesconstruindoImaginariosAPI\obj\Debug\netcoreapp3.1\DesconstruindoImaginariosAPI.csprojAssemblyReference.cache

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DesconstruindoImaginariosAPI.Data;
 using DesconstruindoImaginariosAPI.Models;
+using DesconstruindoImaginariosAPI.Services.Abstract;
 
 namespace DesconstruindoImaginariosAPI.Controllers
 {
@@ -14,25 +13,25 @@ namespace DesconstruindoImaginariosAPI.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IQuestionService questionService;
 
-        public QuestionsController(DataContext context)
+        public QuestionsController(IQuestionService questionService)
         {
-            _context = context;
+            this.questionService = questionService;
         }
 
         // GET: api/Questions
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Question>>> GetQuestions()
+        public async Task<IEnumerable<Question>> GetQuestions()
         {
-            return await _context.Questions.ToListAsync();
+            return await this.questionService.GetAllQuestionsAsync();
         }
 
         // GET: api/Questions/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Question>> GetQuestion(int id)
+        public ActionResult<Question> GetQuestion(int id)
         {
-            var question = await _context.Questions.FindAsync(id);
+            var question = this.questionService.GetQuestionById(id);
 
             if (question == null)
             {
@@ -53,23 +52,12 @@ namespace DesconstruindoImaginariosAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(question).State = EntityState.Modified;
+            if (!this.questionService.QuestionExists(id))
+            {
+                return NotFound();
+            }
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!QuestionExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await this.questionService.UpdateQuestionAsync(question);
 
             return NoContent();
         }
@@ -80,16 +68,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Question>> PostQuestion(Question question)
         {
-            _context.Questions.Add(question);
-
-            var module = await _context.Modules.FindAsync(question.Module.Id);
-            if (module != null)
-            {
-                _context.Entry(module).State = EntityState.Modified;
-                _context.Update(module);
-            }            
-
-            await _context.SaveChangesAsync();
+            await this.questionService.AddQuestionAsync(question);            
 
             return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
         }
@@ -98,21 +77,15 @@ namespace DesconstruindoImaginariosAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Question>> DeleteQuestion(int id)
         {
-            var question = await _context.Questions.FindAsync(id);
+            var question = this.questionService.GetQuestionById(id);
             if (question == null)
             {
                 return NotFound();
             }
 
-            _context.Questions.Remove(question);
-            await _context.SaveChangesAsync();
+            await this.DeleteQuestion(id);
 
             return question;
-        }
-
-        private bool QuestionExists(int id)
-        {
-            return _context.Questions.Any(e => e.Id == id);
         }
     }
 }
