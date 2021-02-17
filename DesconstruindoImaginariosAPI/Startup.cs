@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using DesconstruindoImaginariosAPI.Data;
+using DesconstruindoImaginariosAPI.Repository.Abstract;
+using DesconstruindoImaginariosAPI.Repository.Concrete;
+using DesconstruindoImaginariosAPI.Services.Abstract;
+using DesconstruindoImaginariosAPI.Services.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace DesconstruindoImaginariosAPI
 {
@@ -20,7 +18,7 @@ namespace DesconstruindoImaginariosAPI
         {
             Configuration = configuration;
         }
-
+            
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -35,6 +33,12 @@ namespace DesconstruindoImaginariosAPI
                  .AddNewtonsoftJson(options =>
                  options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
              );
+
+            //Services
+            services.AddScoped<IUserService, UserService>();
+
+            //Repositories
+            services.AddScoped<IUserRepository, UserRepository>();
 
         }
 

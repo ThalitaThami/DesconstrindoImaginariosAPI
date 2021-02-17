@@ -48,7 +48,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutQuestion(int id, Question question)
         {
-            if (id != question.QuestionId)
+            if (id != question.Id)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
         {
             _context.Questions.Add(question);
 
-            var module = await _context.Modules.FindAsync(question.Module.ModuleId);
+            var module = await _context.Modules.FindAsync(question.Module.Id);
             if (module != null)
             {
                 _context.Entry(module).State = EntityState.Modified;
@@ -91,7 +91,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
 
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetQuestion", new { id = question.QuestionId }, question);
+            return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
         }
 
         // DELETE: api/Questions/5
@@ -112,7 +112,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
 
         private bool QuestionExists(int id)
         {
-            return _context.Questions.Any(e => e.QuestionId == id);
+            return _context.Questions.Any(e => e.Id == id);
         }
     }
 }

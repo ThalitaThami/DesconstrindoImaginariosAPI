@@ -48,7 +48,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutModule(int id, Module @module)
         {
-            if (id != @module.ModuleId)
+            if (id != @module.Id)
             {
                 return BadRequest();
             }
@@ -81,7 +81,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
             _context.Modules.Add(@module);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetModule", new { id = @module.ModuleId }, @module);
+            return CreatedAtAction("GetModule", new { id = @module.Id }, @module);
         }
 
         // DELETE: api/Modules/5
@@ -102,7 +102,7 @@ namespace DesconstruindoImaginariosAPI.Controllers
 
         private bool ModuleExists(int id)
         {
-            return _context.Modules.Any(e => e.ModuleId == id);
+            return _context.Modules.Any(e => e.Id == id);
         }
     }
 }

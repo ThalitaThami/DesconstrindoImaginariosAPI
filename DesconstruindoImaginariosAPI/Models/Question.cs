@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace DesconstruindoImaginariosAPI.Models
 {
-    public class Question
+    public class Question : IEntity
     {
-        public int QuestionId { get; set; }
+        public int Id { get; set; }
         public string Description { get; set; }
         public Module Module { get; set; }
         public List<Answer> Answers { get; set; }
