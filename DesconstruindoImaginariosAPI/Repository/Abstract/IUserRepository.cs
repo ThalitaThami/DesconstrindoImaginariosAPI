@@ -10,7 +10,6 @@ namespace DesconstruindoImaginariosAPI.Repository.Abstract
     {
         public User GetUser(int id);
         public Task<IEnumerable<User>> GelAllUsers();
-
         public bool UserExists(int id);
     }
 }
