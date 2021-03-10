@@ -1,8 +1,13 @@
 ﻿using DesconstruindoImaginariosAPI.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DesconstruindoImaginariosAPI.Repository.Abstract
 {
-    interface IAnswerRepository : IRepositoryBase<Answer>
+    public interface IAnswerRepository : IRepositoryBase<Answer>
     {
+        public Answer GetAnswer(int id);
+        public Task<IEnumerable<Answer>> GelAllAnswers();
+        public bool AnswerExists(int id);
     }
 }

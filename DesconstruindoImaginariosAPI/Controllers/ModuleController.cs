@@ -11,11 +11,11 @@ namespace DesconstruindoImaginariosAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ModulesController : ControllerBase
+    public class ModuleController : ControllerBase
     {
         private readonly IModuleService moduleService;
 
-        public ModulesController(IModuleService moduleService)
+        public ModuleController(IModuleService moduleService)
         {
             this.moduleService = moduleService;
         }

@@ -18,12 +18,12 @@ namespace DesconstruindoImaginariosAPI.Repository.Concrete
 
         public Question GetQuestion(int id)
         {
-            return this._context.Questions.FindAsync(id).Result;
+            return this._context.Questions.Include(x => x.Module).Include(x => x.Answers).FirstOrDefault();
         }
 
         public async Task<IEnumerable<Question>> GelAllQuestions()
         {
-            return await _context.Questions.ToListAsync();
+            return await _context.Questions.Include(x => x.Module).Include(x => x.Answers).ToListAsync();
         }
 
         public bool QuestionExists(int id)

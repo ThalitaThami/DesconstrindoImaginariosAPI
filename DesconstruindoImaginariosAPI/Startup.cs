@@ -37,10 +37,14 @@ namespace DesconstruindoImaginariosAPI
             //Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IModuleService, ModuleService>();
+            services.AddScoped<IAnswerService, AnswerService>();
+            services.AddScoped<IQuestionService, QuestionService>();
 
             //Repositories
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IModuleRepository, ModuleRepository>();
+            services.AddScoped<IAnswerRepository, AnswerRepository>();
+            services.AddScoped<IQuestionRepository, QuestionRepository>();
 
         }
 

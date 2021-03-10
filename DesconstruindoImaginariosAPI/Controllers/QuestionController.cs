@@ -11,11 +11,11 @@ namespace DesconstruindoImaginariosAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QuestionsController : ControllerBase
+    public class QuestionController : ControllerBase
     {
         private readonly IQuestionService questionService;
 
-        public QuestionsController(IQuestionService questionService)
+        public QuestionController(IQuestionService questionService)
         {
             this.questionService = questionService;
         }
